@@ -8,3 +8,5 @@ $.ajax({
 }).done(function(data) {
   console.log("I got data", data);
 });
+
+var topics =["cheerleading", "too cute", "I love Lucy", "Tea cup Pigs"]
