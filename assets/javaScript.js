@@ -62,5 +62,32 @@ $(document).ready(function() {
         }
       });
   });
+
+  $(document).on("click", ".topic-image", function() {
+
+    var state = $(this).attr("data-state");
+
+    if (state === "still") {
+      $(this).attr("src", $(this).attr("data-animate"));
+      $(this).attr("data-state", "animate");
+    }
+    else {
+      $(this).attr("src", $(this).attr("data-still"));
+      $(this).attr("data-state", "still");
+    }
+  });
+
+  $("#add-btn").on("click", function(event) {
+    event.preventDefault();
+    var newTopic = $("input").eq(0).val();
+
+    if (newTopic.length > 2) {
+      topics.push(newTopic);
+    }
+
+    showButtons();
+  });
+
   showButtons();
 });
+
