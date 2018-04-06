@@ -1,47 +1,66 @@
-console.log("test to see if this page shows up");
-
-var topics =["cheerleading", "too cute", "I love Lucy", "Tea cup Pigs"]
-
-function showButtons() {
- 
+$(document).ready(function() {
+  console.log("test to see if this page shows up");
+// ========Declare all variabes ====================
+  var topics =["cheerleading", "too cute", "I love Lucy", "Tea cup Pigs"];
+// =================== Functions =====================
+  // First lets make buttos appear on the screen
+  function showButtons() {
+  // clear any buttons from the previous user
+    $("#favButtons").empty();
+  // creat a loop to go through all of the items inside of the topics array
     for (let index = 0; index < topics.length; index++) {
-        
-        var a = $("<Button>");
+        var a = $("<button>");
+        a.addClass("gif-btn");
+        a.attr("data-type", topics[index]);
         a.text(topics[index]);
-        $(".favButtons").append(a);   
+        $("#favButtons").append(a);
     }
-}
-    showButtons();
+  }
 
-    // Here is code to get at least one button to show so I can attempt to make it still 
-    $("button").on("click", function() {
-        var topic = $(this).attr("value");
-        // Constructing a URL to search Giphy for the value of the button that was clicked on
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-          topic + "&api_key=dc6zaTOxFJmzC&limit=10";
-        // AJAX request
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-          })
+  // Making the Ajax call to giphy.com
+    $(document).on("click", ".gif-btn",function() {
+  // Clear any giphs already on the screen
+      $("#giphy_dump").empty();
+      $(".gif-btn").removeClass("active");
+        $(this).addClass("active");
+  // Set the search value of the ajax call to the text of the button
+      var search = $(this).attr("data-type");
+  // Constructing a URL to search Giphy for the value of the button that was clicked on
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=dc6zaTOxFJmzC&limit=10";
+  // AJAX request
+      $.ajax({
+          url: queryURL,
+          method: "GET"
+        })
+  // What I want to happen after the data comes back from the API
+      .then(function(response) {
+  // set the response object to a variable to make it easier to work with
+        var results = response.data;
 
-          // After the data comes back from the API
-          .done(function(response) {
-            var results = response.data;
-  
-            for (var i = 0; i < results.length; i++) {
-              if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-                var gifDiv = $("<div class='item'>");
-                var rating = results[i].rating;
-                var p = $("<p>").text("Rating: " + rating);
-                var topicImg = $("<img>");
-  
-                topicImg.attr("src", results[i].images.fixed_height.url);
+        // $("#giphy_dump").prepend(results[1].images.fixed_height.url);
 
-                gifDiv.append(p);
-                gifDiv.append(topicImg);
-                $("#giphy_dump").prepend(gifDiv);
-              }
-            }
-          });
+        for (var i = 0; i < results.length; i++) {
+          if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+            var gifDiv = $("<div class='item'>");
+            var rating = results[i].rating;
+            var p = $("<p>").text("Rating: " + rating);
+            var topicImg = $("<img>");
+            var animated = results[i].images.fixed_height.url;
+            var still = results[i].images.fixed_height_still.url;
+            
+            topicImg.attr("src", still);
+            topicImg.attr("data-still", still);
+            topicImg.attr("data-animate", animated);
+            topicImg.attr("data-State", "still");
+            topicImg.addClass("topic-image");
+
+            gifDiv.append(p);
+            gifDiv.append(topicImg);
+
+            $("#giphy_dump").prepend(gifDiv);
+          }
+        }
       });
+  });
+  showButtons();
+});
