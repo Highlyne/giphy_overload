@@ -1,0 +1,20 @@
+body {
+    background-image: url('http://www.zingerbugimages.com/backgrounds/purple_parchment_paper_wallpaper_texture_seamless.jpg');
+}
+
+.jumbotron {
+    padding: 10px;
+}
+
+#giphy_dump {
+    color: aquamarine;
+}
+
+.topic-image {
+    float: left;
+    padding: 10px;
+  }
+
+  p {
+      font-size: 40px;
+  }
