@@ -3,8 +3,8 @@ body {
 }
 
 #heading {
-    border: black solid 5px;
-    background: #f8bbd0;
+    border: #7b1fa2 solid 5px;
+    background: #69f0ae ;
     
 }
 
@@ -36,7 +36,7 @@ body {
     clear: both;
   }
   .topic-image {
-    border: solid 10px #ec407a;
+    border: 10px;
     border-radius: 15px;  
     height: 200px;
     width: 200px;

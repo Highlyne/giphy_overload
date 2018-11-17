@@ -80,15 +80,15 @@ $(document).ready(function() {
     }
   });
 
-  $("#add-btn").on("click", function(event) {
+  $("#add").on("click", function(event) {
     event.preventDefault();
-    var newTopic = $("input").eq(0).val();
-
+    
+    var newTopic = $("#add-fav").val();
     if (newTopic.length > 2) {
       topics.push(newTopic);
     }
-
     showButtons();
+    $('#add-fav').val("");
   });
 
   showButtons();
