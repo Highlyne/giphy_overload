@@ -5,6 +5,7 @@ body {
 #heading {
     border: #7b1fa2 solid 5px;
     background: #69f0ae ;
+    font-family: 'Bevan', cursive;
     
 }
 
@@ -54,4 +55,29 @@ body {
     content: "";
     clear: both;
     display: table;
+}
+/* For mobile phones: */
+@media only screen and (max-width: 460px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+        grid-gap: 5px;
+        padding: 5px;
+        clear: both;
+
+    }
+
+}
+
+
+@media only screen and (max-width: 680x) {
+    /* For tablets: */
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 5px;
+        padding: 5px;
+        clear: both;
+
+    }
 }
