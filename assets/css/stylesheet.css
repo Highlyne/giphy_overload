@@ -6,12 +6,12 @@ body {
     padding: 10px;
 }
 
-
+.btn {
+    margin: 10px;
+}
 
 #giphy_dump {
-    color: aquamarine;
-    border: solid 5px red;
-
+    color: #ec407a;
 }
 .grid-container {
     display: grid;
@@ -28,16 +28,17 @@ body {
     clear: both;
   }
   .topic-image {
-    border: solid 10px blueviolet;
+    border: solid 10px #ec407a;
     border-radius: 15px;  
     height: 200px;
     width: 200px;
   }
   p {
-      background-color: blueviolet;
-      border: solid 15px;
-      border-radius: 15px;
-      font-size: 30px;
+      
+    background-color: #f8bbd0;
+    border: solid 15px;
+    border-radius: 15px;
+    font-size: 30px;
   }
   /* .grid-container > p {
     text-align: center;

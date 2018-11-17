@@ -26,7 +26,7 @@ $(document).ready(function() {
   // Set the search value of the ajax call to the text of the button
       var search = $(this).attr("data-type");
   // Constructing a URL to search Giphy for the value of the button that was clicked on
-      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=dc6zaTOxFJmzC&limit=10";
+      var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + search + "&api_key=dc6zaTOxFJmzC&limit=12";
   // AJAX request
       $.ajax({
           url: queryURL,
@@ -43,7 +43,7 @@ $(document).ready(function() {
         for (var i = 0; i < results.length; i++) {
           if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
            
-            var rating = results[i].rating;
+            var rating = results[i].rating.toUpperCase();
             var p = $("<p>").text("Rating: " + rating);
             var topicImg = $("<img>");
             var animated = results[i].images.fixed_height.url;
