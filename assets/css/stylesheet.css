@@ -11,10 +11,14 @@ body {
     border: solid 5px red;
 
 }
-
+.item {
+    border: solid 5px green;
+    clear: both;
+}
 .topic-image {
     float: left;
     padding: 10px;
+    border: solid 5px blue;
   }
 
   p {
