@@ -2,8 +2,17 @@ body {
     background-image: url('/assets/images/grid/grid_@2X.png');
 }
 
-.jumbotron {
-    padding: 10px;
+#heading {
+    border: black solid 5px;
+    background: #f8bbd0;
+    
+}
+
+#head-gif {
+    width: 150px;
+    height: 150px;
+    border-radius: 2px 25px 25px 2px;
+    float: left;
 }
 
 .btn {
@@ -15,10 +24,9 @@ body {
 }
 .grid-container {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: auto auto auto auto;
     grid-gap: 45px;
     padding: 10px;
-    border: solid 5px green;
     clear: both;
 }
 .grid-container > .topic-image, p {
@@ -40,14 +48,9 @@ body {
     border-radius: 15px;
     font-size: 30px;
   }
-  /* .grid-container > p {
-    text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
-    clear: both;
-  } */
 
   .clearfix::after {
+    overflow: auto;
     content: "";
     clear: both;
     display: table;

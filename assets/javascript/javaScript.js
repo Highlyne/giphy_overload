@@ -1,7 +1,7 @@
 $(document).ready(function() {
   console.log("test to see if this page shows up");
 // ========Declare all variabes ====================
-  var topics =["cheerleading", "too cute", "I love Lucy", "Tea cup Pigs"];
+  var topics =["cheerleading", "funny", "I love Lucy", "Tea cup Pigs", "puppy"];
 // =================== Functions =====================
   // First lets make buttos appear on the screen
   function showButtons() {
@@ -36,6 +36,7 @@ $(document).ready(function() {
       .then(function(response) {
   // set the response object to a variable to make it easier to work with
         var results = response.data;
+        console.log(results);
 
         // $("#giphy_dump").prepend(results[1].images.fixed_height.url);
         var gifDiv = $("<div class='grid-container'>");
@@ -57,7 +58,7 @@ $(document).ready(function() {
 
            
             gifDiv.append(topicImg);
-            gifDiv.append(p);
+            // gifDiv.append(p);
 
             $("#giphy_dump").prepend(gifDiv);
           }
