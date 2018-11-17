@@ -10,7 +10,7 @@ $(document).ready(function() {
   // creat a loop to go through all of the items inside of the topics array
     for (let index = 0; index < topics.length; index++) {
         var a = $("<button>");
-        a.addClass("gif-btn");
+        a.addClass("waves-effect waves-light btn");
         a.attr("data-type", topics[index]);
         a.text(topics[index]);
         $("#favButtons").append(a);
@@ -18,10 +18,10 @@ $(document).ready(function() {
   }
 
   // Making the Ajax call to giphy.com
-    $(document).on("click", ".gif-btn",function() {
+    $(document).on("click", ".btn",function() {
   // Clear any giphs already on the screen
       $("#giphy_dump").empty();
-      $(".gif-btn").removeClass("active");
+      $(".btn").removeClass("active");
         $(this).addClass("active");
   // Set the search value of the ajax call to the text of the button
       var search = $(this).attr("data-type");

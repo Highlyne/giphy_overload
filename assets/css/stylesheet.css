@@ -1,5 +1,5 @@
 body {
-    background-image: url('http://www.zingerbugimages.com/backgrounds/purple_parchment_paper_wallpaper_texture_seamless.jpg');
+    background-image: url('/assets/images/grid/grid_@2X.png');
 }
 
 .jumbotron {
@@ -8,6 +8,8 @@ body {
 
 #giphy_dump {
     color: aquamarine;
+    border: solid 5px red;
+
 }
 
 .topic-image {
@@ -18,3 +20,9 @@ body {
   p {
       font-size: 40px;
   }
+
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
