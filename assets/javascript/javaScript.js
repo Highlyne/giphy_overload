@@ -10,7 +10,7 @@ $(document).ready(function() {
   // creat a loop to go through all of the items inside of the topics array
     for (let index = 0; index < topics.length; index++) {
         var a = $("<button>");
-        a.addClass("waves-effect waves-light btn");
+        a.addClass("pink lighten-1 waves-effect waves-light btn");
         a.attr("data-type", topics[index]);
         a.text(topics[index]);
         $("#favButtons").append(a);
@@ -38,10 +38,11 @@ $(document).ready(function() {
         var results = response.data;
 
         // $("#giphy_dump").prepend(results[1].images.fixed_height.url);
-
+        var gifDiv = $("<div class='grid-container'>");
+        $("#giphy_dump").prepend(gifDiv);
         for (var i = 0; i < results.length; i++) {
           if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
-            var gifDiv = $("<div class='item'>");
+           
             var rating = results[i].rating;
             var p = $("<p>").text("Rating: " + rating);
             var topicImg = $("<img>");
@@ -54,8 +55,9 @@ $(document).ready(function() {
             topicImg.attr("data-State", "still");
             topicImg.addClass("topic-image");
 
-            gifDiv.append(p);
+           
             gifDiv.append(topicImg);
+            gifDiv.append(p);
 
             $("#giphy_dump").prepend(gifDiv);
           }

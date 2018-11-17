@@ -6,24 +6,45 @@ body {
     padding: 10px;
 }
 
+
+
 #giphy_dump {
     color: aquamarine;
     border: solid 5px red;
 
 }
-.item {
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-gap: 45px;
+    padding: 10px;
     border: solid 5px green;
     clear: both;
 }
-.topic-image {
-    float: left;
-    padding: 10px;
-    border: solid 5px blue;
+.grid-container > .topic-image, p {
+    align-content: center;
+    text-align: center;
+    /* padding: 20px 0; */
+    clear: both;
   }
-
+  .topic-image {
+    border: solid 10px blueviolet;
+    border-radius: 15px;  
+    height: 200px;
+    width: 200px;
+  }
   p {
-      font-size: 40px;
+      background-color: blueviolet;
+      border: solid 15px;
+      border-radius: 15px;
+      font-size: 30px;
   }
+  /* .grid-container > p {
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+    clear: both;
+  } */
 
   .clearfix::after {
     content: "";
