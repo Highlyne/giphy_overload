@@ -1,5 +1,6 @@
 body {
     background-image: url('/assets/images/grid/grid_@2X.png');
+    margin-top: .5em;
 }
 
 #heading {
@@ -61,10 +62,43 @@ body {
     .grid-container {
         display: grid;
         grid-template-columns: auto;
-        grid-gap: 5px;
+        grid-gap: 15px;
         padding: 5px;
+        margin-left: 1em;
+        width: 80vw;
         clear: both;
 
+    }
+    .topic-image {
+        height: 300px;
+        width: 300px;
+      }
+
+    #heading {
+        border: #7b1fa2 solid 5px;
+        background: #69f0ae ;
+        font-family: 'Bevan', cursive;
+        width: 70vw;
+        
+    }
+
+    #head-gif {
+        width: 100px;
+        height: 100px;
+        border-radius: 2px 15px 15px 2px;
+        margin-right: 20px;
+    
+    }
+    h1 {
+        font-size: 4vw;
+       
+    }
+
+    .btn {
+        margin: 3px;
+    }
+    #favButtons {
+        width: 70vw;
     }
 
 }
