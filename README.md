@@ -8,12 +8,14 @@ Giphys are fun and bring joy to every one!  Gipy Overload utilizes JQuery to mak
 ## Add your own favorites
 ![add](/assets/images/screenshots/addFav.gif)
 
+## Mobile Responsive
+
 Giphy Overload is also moble responsive so you can use it every where and never miss out on any of the fun.
 
 ![mobile](/assets/images/screenshots/mobile.gif)
 
 
-Join in the fun. [Click Now](https://highlyne.github.io/giphy_overload/)!
+# Join in the fun. [Click Now](https://highlyne.github.io/giphy_overload/)!
 
-<img src="https://github.com/Highlyne/giphy_overload/blob/master/assets/images/octocat.png" width="150" height="150">
+<img src="https://github.com/Highlyne/giphy_overload/blob/master/assets/images/octocat.png" width="200" height="200">
 
