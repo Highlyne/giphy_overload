@@ -15,3 +15,5 @@ Giphy Overload is also moble responsive so you can use it every where and never 
 
 Join in the fun. [Click Now](https://highlyne.github.io/giphy_overload/)!
 
+![octocat](/assets/images/octocat.png)
+
